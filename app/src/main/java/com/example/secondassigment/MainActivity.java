@@ -26,5 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 new ArrayAdapter<String>(
                         this, android.R.layout.simple_list_item_1, topicList);
         simpleList.setAdapter(myAdapter);
+        //clickListener that sends information to the other activity
+
     }
 }
