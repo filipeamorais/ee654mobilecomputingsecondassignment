@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getBaseContext(), subject, Toast.LENGTH_SHORT).show();
                 try {
                     Intent intent = new Intent(MainActivity.this, BookList.class);
-                    intent..putExtra(MESSAGE, subject);
+                    intent.putExtra(MESSAGE, subject);
                     startActivity(intent);
                 } catch (Exception e) {/* Log error messages */}
             }

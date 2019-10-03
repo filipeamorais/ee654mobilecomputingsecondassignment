@@ -1,6 +1,9 @@
 package com.example.secondassigment;
 
-public class Item {
+
+import java.io.Serializable;
+
+public class Item implements Serializable {
     String flagName;
     int flagImage;
     String flagAuthor;

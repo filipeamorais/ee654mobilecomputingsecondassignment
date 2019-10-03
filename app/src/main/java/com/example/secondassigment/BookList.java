@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,6 +19,7 @@ public class BookList extends AppCompatActivity {
     ArrayList<Item> androidList = new ArrayList<>();
     ArrayList<Item> mlList = new ArrayList<>();
     ArrayList<Item> pythonList = new ArrayList<>();
+    public final static String MESSAGE = "BookDisplay";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,17 @@ public class BookList extends AppCompatActivity {
         MyAdapter myAdapter = new MyAdapter(this, R.layout.list_view_items, BookMap.get(subjectSelected));
         simpleListView.setAdapter(myAdapter);
 
+        simpleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Item bookSelected = (Item) simpleListView.getItemAtPosition(position);
+
+                try {
+                    Intent intent = new Intent(BookList.this, BookDisplay.class);
+                    intent.putExtra(MESSAGE, bookSelected);
+                    startActivity(intent);
+                } catch (Exception e) {/* Log error messages */}
+            }
+        });//end of setOnClickListener()
 
 
     }
