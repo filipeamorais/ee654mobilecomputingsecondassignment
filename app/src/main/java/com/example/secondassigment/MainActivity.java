@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
         //clickListener that sends information to the other activity
         simpleList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String book = (String) simpleList.getItemAtPosition(position);
-                Toast.makeText(getBaseContext(), book, Toast.LENGTH_SHORT).show();
+                String subject = (String) simpleList.getItemAtPosition(position);
+                Toast.makeText(getBaseContext(), subject, Toast.LENGTH_SHORT).show();
                 try {
                     Intent intent = new Intent(MainActivity.this, BookList.class);
-                    intent.putExtra(MESSAGE, book);
+                    intent.putExtra(MESSAGE, subject);
                     startActivity(intent);
                 } catch (Exception e) {/* Log error messages */}
             }
