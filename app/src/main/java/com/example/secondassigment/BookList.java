@@ -29,22 +29,15 @@ public class BookList extends AppCompatActivity {
         //defining a variable name for the ListView implemented on the BookList layout
         simpleListView = (ListView) findViewById(R.id.simpleListView);
 
-        //adding items to the ArrayList(s) that will be displayed by the ListView according to the selection
-//        androidList.add(new Item("Android", R.drawable.brazil_flag));
-//        androidList.add(new Item("Android", R.drawable.brazil_flag));
-        androidList.add(new Item("Android Studio 3.4 Development Essentials", R.drawable.androidstudioessential, "none", "2019"));
-        androidList.add(new Item("Android Programming: The Big Nerd Ranch Guide", R.drawable.androidprogramming, "none", "2019"));
+        androidList.add(new Item("Android Studio 3.4 Development Essentials", R.drawable.androidstudioessential, "Neil Smyth", "2019"));
+        androidList.add(new Item("Android Programming: The Big Nerd Ranch Guide", R.drawable.androidprogramming, "Bill Phillips", "2019"));
 
-        mlList.add(new Item("The Hundred-Page Machine Learning Book", R.drawable.hundredpageml, "none", "2019"));
-        mlList.add(new Item("Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems", R.drawable.handonsmachinelearning, "none", "2019"));
-//        mlList.add(new Item("The", R.drawable.brazil_flag));
+        mlList.add(new Item("The Hundred-Page Machine Learning Book", R.drawable.hundredpageml, "Andriy Burkov", "2019"));
+        mlList.add(new Item("Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems", R.drawable.handonsmachinelearning, "Aurélien Géron", "2019"));
 
-
-//        pythonList.add(new Item("Learning", R.drawable.brazil_flag));
-
-        pythonList.add(new Item("Learning Python", R.drawable.learningpython, "none", "2019"));
-        pythonList.add(new Item("Python Crash Course", R.drawable.pythoncrash, "none", "2019"));
-        pythonList.add(new Item("Starting Out with Python", R.drawable.startingoutwithpython, "none", "2019"));
+        pythonList.add(new Item("Learning Python: Powerful Object-Oriented Programming", R.drawable.learningpython, "Mark Lutz", "2013"));
+        pythonList.add(new Item("Python Crash Course", R.drawable.pythoncrash, "Eric Matthes", "2019"));
+        pythonList.add(new Item("Starting Out with Python", R.drawable.startingoutwithpython, "Tony Gaddis", "2019"));
 
         //adding the lists to the hashmap variable
         BookMap.put("Android", androidList);

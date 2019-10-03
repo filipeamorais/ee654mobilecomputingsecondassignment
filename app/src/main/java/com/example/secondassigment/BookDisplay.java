@@ -25,14 +25,14 @@ public class BookDisplay extends AppCompatActivity {
 
         TextView bookTitle = (TextView)
                 findViewById(R.id.bookTitle);
-        bookTitle.setText(bookChosen.getbookTitle());
+        bookTitle.setText("Title: " + bookChosen.getbookTitle());
 
         TextView bookAuthor = (TextView)
                 findViewById(R.id.bookAuthor);
-        bookAuthor.setText(bookChosen.getbookAuthor());
+        bookAuthor.setText("Author: " +bookChosen.getbookAuthor());
 
         TextView bookYear = (TextView)
                 findViewById(R.id.bookYear);
-        bookYear.setText(bookChosen.getbookYear());
+        bookYear.setText("Year: " +bookChosen.getbookYear());
     }
 }

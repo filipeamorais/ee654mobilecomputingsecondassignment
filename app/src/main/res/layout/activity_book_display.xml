@@ -15,7 +15,8 @@
         android:layout_gravity="center"
         android:padding="10dp"
         android:text="Title"
-        android:textColor="#000" />
+        android:textSize="20dp"
+        android:textColor="#483D8B" />
     <TextView
         android:id="@+id/bookAuthor"
         android:layout_width="fill_parent"
@@ -23,7 +24,8 @@
         android:layout_gravity="center"
         android:padding="10dp"
         android:text="Author"
-        android:textColor="#000" />
+        android:textSize="20dp"
+        android:textColor="#483D8B" />
     <TextView
         android:id="@+id/bookYear"
         android:layout_width="fill_parent"
@@ -31,5 +33,6 @@
         android:layout_gravity="center"
         android:padding="10dp"
         android:text="Year"
-        android:textColor="#000" />
+        android:textSize="20dp"
+        android:textColor="#483D8B" />
 </LinearLayout>
