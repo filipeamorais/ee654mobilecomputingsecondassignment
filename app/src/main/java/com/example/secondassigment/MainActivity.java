@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView simpleList;
+    ListView simpleListView;
     ArrayList<String> topicList = new ArrayList<>();
     public final static String MESSAGE = "BookList";
 
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        simpleList = (ListView) findViewById(R.id.simpleListView);
+        simpleListView = (ListView) findViewById(R.id.simpleListView);
         topicList.add("Android");
         topicList.add("Machine Learning");
         topicList.add("Python");
@@ -30,15 +30,15 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> myAdapter =
                 new ArrayAdapter<String>(
                         this, android.R.layout.simple_list_item_1, topicList);
-        simpleList.setAdapter(myAdapter);
+        simpleListView.setAdapter(myAdapter);
         //clickListener that sends information to the other activity
-        simpleList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        simpleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String subject = (String) simpleList.getItemAtPosition(position);
+                String subject = (String) simpleListView.getItemAtPosition(position);
                 Toast.makeText(getBaseContext(), subject, Toast.LENGTH_SHORT).show();
                 try {
                     Intent intent = new Intent(MainActivity.this, BookList.class);
-                    intent.putExtra(MESSAGE, subject);
+                    intent..putExtra(MESSAGE, subject);
                     startActivity(intent);
                 } catch (Exception e) {/* Log error messages */}
             }

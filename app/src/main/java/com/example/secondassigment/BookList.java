@@ -28,19 +28,19 @@ public class BookList extends AppCompatActivity {
         //adding items to the ArrayList(s) that will be displayed by the ListView according to the selection
 //        androidList.add(new Item("Android", R.drawable.brazil_flag));
 //        androidList.add(new Item("Android", R.drawable.brazil_flag));
-        androidList.add(new Item("Android Studio 3.4 Development Essentials", R.drawable.androidstudioessential));
-        androidList.add(new Item("Android Programming: The Big Nerd Ranch Guide", R.drawable.androidprogramming));
+        androidList.add(new Item("Android Studio 3.4 Development Essentials", R.drawable.androidstudioessential, "none", "2019"));
+        androidList.add(new Item("Android Programming: The Big Nerd Ranch Guide", R.drawable.androidprogramming, "none", "2019"));
 
-        mlList.add(new Item("The Hundred-Page Machine Learning Book", R.drawable.hundredpageml));
-        mlList.add(new Item("Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems", R.drawable.handonsmachinelearning));
+        mlList.add(new Item("The Hundred-Page Machine Learning Book", R.drawable.hundredpageml, "none", "2019"));
+        mlList.add(new Item("Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems", R.drawable.handonsmachinelearning, "none", "2019"));
 //        mlList.add(new Item("The", R.drawable.brazil_flag));
 
 
 //        pythonList.add(new Item("Learning", R.drawable.brazil_flag));
 
-        pythonList.add(new Item("Learning Python", R.drawable.learningpython));
-        pythonList.add(new Item("Python Crash Course", R.drawable.pythoncrash));
-        pythonList.add(new Item("Starting Out with Python", R.drawable.startingoutwithpython));
+        pythonList.add(new Item("Learning Python", R.drawable.learningpython, "none", "2019"));
+        pythonList.add(new Item("Python Crash Course", R.drawable.pythoncrash, "none", "2019"));
+        pythonList.add(new Item("Starting Out with Python", R.drawable.startingoutwithpython, "none", "2019"));
 
         //adding the lists to the hashmap variable
         BookMap.put("Android", androidList);
@@ -55,6 +55,8 @@ public class BookList extends AppCompatActivity {
         //creating the adapter used to bind the ArrayList, the ListView and its layout
         MyAdapter myAdapter = new MyAdapter(this, R.layout.list_view_items, BookMap.get(subjectSelected));
         simpleListView.setAdapter(myAdapter);
+
+
 
     }
 }
