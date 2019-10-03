@@ -17,8 +17,9 @@ public class BookDisplay extends AppCompatActivity {
         Intent intent = getIntent();
         Item bookChosen =
                 (Item) intent.getSerializableExtra(BookList.MESSAGE);
+
         TextView textView = (TextView)
                 findViewById(R.id.textView);
-        textView.setText(bookChosen.getFlagName());
+        textView.setText(bookChosen.getbookTitle());
     }
 }
