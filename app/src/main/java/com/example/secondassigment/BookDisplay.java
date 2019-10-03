@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class BookDisplay extends AppCompatActivity {
@@ -17,6 +18,10 @@ public class BookDisplay extends AppCompatActivity {
         Intent intent = getIntent();
         Item bookChosen =
                 (Item) intent.getSerializableExtra(BookList.MESSAGE);
+
+        ImageView imageView = (ImageView)
+                findViewById(R.id.imageView);
+        imageView.setImageResource(bookChosen.getbookImage());
 
         TextView textView = (TextView)
                 findViewById(R.id.textView);
