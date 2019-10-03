@@ -20,11 +20,19 @@ public class BookDisplay extends AppCompatActivity {
                 (Item) intent.getSerializableExtra(BookList.MESSAGE);
 
         ImageView imageView = (ImageView)
-                findViewById(R.id.imageView);
+                findViewById(R.id.bookImage);
         imageView.setImageResource(bookChosen.getbookImage());
 
-        TextView textView = (TextView)
-                findViewById(R.id.textView);
-        textView.setText(bookChosen.getbookTitle());
+        TextView bookTitle = (TextView)
+                findViewById(R.id.bookTitle);
+        bookTitle.setText(bookChosen.getbookTitle());
+
+        TextView bookAuthor = (TextView)
+                findViewById(R.id.bookAuthor);
+        bookAuthor.setText(bookChosen.getbookAuthor());
+
+        TextView bookYear = (TextView)
+                findViewById(R.id.bookYear);
+        bookYear.setText(bookChosen.getbookYear());
     }
 }

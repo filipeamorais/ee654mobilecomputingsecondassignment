@@ -36,9 +36,9 @@ class MyAdapter extends ArrayAdapter <Item> {
         ImageView imageView = (ImageView)
                 v.findViewById(R.id.imageView);
         //setting the components
-        textView.setText(flagList.get(position).getFlagName());
+        textView.setText(flagList.get(position).getbookTitle());
         imageView.setImageResource(
-                flagList.get(position).getFlagImage());
+                flagList.get(position).getbookImage());
         return v;
     }
 } //end of class MyAdapter
