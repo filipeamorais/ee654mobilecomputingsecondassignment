@@ -2,6 +2,7 @@ package com.example.secondassigment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -13,6 +14,15 @@ public class BookDisplay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_display);
+
+        //cleanup existing fragments
+        if (savedInstanceState != null) {
+            getFragmentManager().executePendingTransactions();
+            Fragment fragmentById = getFragmentManager().findFragmentById(R.id.fragment_container);
+            if (fragmentById != null) {
+                getFragmentManager().beginTransaction().remove(fragmentById).commit();
+            }
+        }
 
         //getting the intend and checking its selection
         Intent intent = getIntent();
