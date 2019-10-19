@@ -3,14 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:paddingBottom="5dp">
-    </FrameLayout>
     <ImageView
         android:id="@+id/bookImage"
         android:layout_width="fill_parent"
@@ -43,4 +35,20 @@
         android:text="Year"
         android:textSize="20dp"
         android:textColor="#483D8B" />
+    <fragment
+        android:id="@+id/pictureFragment"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        class="com.example.secondassignement.PictureFragment"
+        tools:layout="@layout/list_fgt">
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        class="com.example.secondassignement.DetailFragment"
+        tools:layout="@layout/detail_fgt">
+    </fragment>
 </LinearLayout>
