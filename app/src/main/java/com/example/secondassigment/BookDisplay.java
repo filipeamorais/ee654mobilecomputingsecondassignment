@@ -1,42 +1,55 @@
 package com.example.secondassigment;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Fragment;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class BookDisplay extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_display);
 
-        /*//cleanup existing fragments
-        if (savedInstanceState != null) {
-            getFragmentManager().executePendingTransactions();
-            Fragment fragmentById = getFragmentManager().findFragmentById(R.id.fragment_container);
-            if (fragmentById != null) {
-                getFragmentManager().beginTransaction().remove(fragmentById).commit();
-            }
-        }*/
-        //instantiating the fragments and displaying them
-        PictureFragment pictureFragment = (PictureFragment) getFragmentManager().findFragmentById(R.id.pictureFragment);
-        DetailFragment detailFragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
-
-
-        //getting the intend and checking its selection
+        //getting the intend and then the book chosen
         Intent intent = getIntent();
         Item bookChosen =
                 (Item) intent.getSerializableExtra(BookList.MESSAGE);
 
+        //instantiating the fragments
+        PictureFragment pictureFragment = new PictureFragment();
+        DetailFragment detailFragment = new DetailFragment();
+
+
+        //instantiating the fragments and displaying them
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+//            PictureFragment pictureFragment = (PictureFragment) getFragmentManager().findFragmentById(R.id.pictureFragment);
+//        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+//            DetailFragment detailFragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
+//        }
+
+
         ImageView imageView = (ImageView)
                 findViewById(R.id.bookImage);
         imageView.setImageResource(bookChosen.getbookImage());
+
+        Bundle argsPicture = new Bundle();
+        argsPicture.putInt("book_image",bookChosen.getbookImage());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            pictureFragment.setArguments(argsPicture);
+        }
+
+        Bundle argsDetail = new Bundle();
+        argsDetail.putInt(BookList.MESSAGE,bookChosen.getbookImage());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            detailFragment.setArguments(argsDetail);
+        }
 
         TextView bookTitle = (TextView)
                 findViewById(R.id.bookTitle);
