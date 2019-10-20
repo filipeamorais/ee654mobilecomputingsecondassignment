@@ -1,17 +1,18 @@
 package com.example.secondassigment;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
 
-public class BookDisplay extends FragmentActivity implements PictureFragment.OnItemSelectedListener{
-
+public class BookDisplay extends Activity {
+    private static FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +25,15 @@ public class BookDisplay extends FragmentActivity implements PictureFragment.OnI
                 (Item) intent.getSerializableExtra(BookList.MESSAGE);
 
         //instantiating the fragments
-        PictureFragment pictureFragment = new PictureFragment();
+        ImageFragment imageFragment = new ImageFragment();
+//        getFragmentManager().executePendingTransactions();
+//        fragmentManager = getFragmentManager();//Get Fragment Manager
 //        DetailFragment detailFragment = new DetailFragment();
 
 
 //        //instantiating the fragments and displaying them
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-//            PictureFragment pictureFragment = (PictureFragment) getFragmentManager().findFragmentById(R.id.pictureFragment);
+//            ImageFragment imageFragment = (ImageFragment) getFragmentManager().findFragmentById(R.id.imageFragment);
 //        }
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 //            DetailFragment detailFragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
@@ -42,10 +45,12 @@ public class BookDisplay extends FragmentActivity implements PictureFragment.OnI
 //        imageView.setImageResource(bookChosen.getbookImage());
 
         Bundle argsPicture = new Bundle();
-        argsPicture.putInt("book_image",bookChosen.getbookImage());
+        argsPicture.putInt(ImageFragment.IMAGE_NUMBER,bookChosen.getbookImage());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            pictureFragment.setArguments(argsPicture);
+            imageFragment.setArguments(argsPicture);
         }
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, imageFragment).addToBackStack(null).commit();
 //
 //        Bundle argsDetail = new Bundle();
 //        argsDetail.putInt(BookList.MESSAGE,bookChosen.getbookImage());
@@ -66,8 +71,4 @@ public class BookDisplay extends FragmentActivity implements PictureFragment.OnI
 //        bookYear.setText("Year: " +bookChosen.getbookYear());
     }
 
-    @Override
-    public void onDateTimeItemSelected(String info) {
-
-    }
 }

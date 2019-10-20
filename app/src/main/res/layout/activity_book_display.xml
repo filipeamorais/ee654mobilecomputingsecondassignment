@@ -5,14 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:baselineAligned="false"
     android:orientation="vertical">
-    <fragment
-        android:id="@+id/pictureFragment"
-        android:layout_width="1dp"
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
         android:layout_weight="1"
-        android:layout_height="match_parent"
-        class="com.example.secondassigment.PictureFragment"
-        tools:layout="@layout/picture_fragment">
-    </fragment>
+        android:paddingBottom="5dp">
+    </FrameLayout>
+<!--    <fragment-->
+<!--        android:id="@+id/imageFragment"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_height="match_parent"-->
+<!--        class="com.example.secondassigment.ImageFragment"-->
+<!--        tools:layout="@layout/fragment_image">-->
+<!--    </fragment>-->
 <!--    <ImageView-->
 <!--        android:id="@+id/bookImage"-->
 <!--        android:layout_width="fill_parent"-->
