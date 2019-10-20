@@ -29,5 +29,4 @@
         android:text="Year"
         android:textSize="20dp"
         android:textColor="#483D8B" />
-
 </LinearLayout>

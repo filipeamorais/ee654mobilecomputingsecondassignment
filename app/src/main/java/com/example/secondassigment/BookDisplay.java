@@ -1,5 +1,6 @@
 package com.example.secondassigment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -7,8 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
-public class BookDisplay extends AppCompatActivity {
+public class BookDisplay extends FragmentActivity implements PictureFragment.OnItemSelectedListener{
 
 
     @Override
@@ -23,10 +25,10 @@ public class BookDisplay extends AppCompatActivity {
 
         //instantiating the fragments
         PictureFragment pictureFragment = new PictureFragment();
-        DetailFragment detailFragment = new DetailFragment();
+//        DetailFragment detailFragment = new DetailFragment();
 
 
-        //instantiating the fragments and displaying them
+//        //instantiating the fragments and displaying them
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 //            PictureFragment pictureFragment = (PictureFragment) getFragmentManager().findFragmentById(R.id.pictureFragment);
 //        }
@@ -35,32 +37,37 @@ public class BookDisplay extends AppCompatActivity {
 //        }
 
 
-        ImageView imageView = (ImageView)
-                findViewById(R.id.bookImage);
-        imageView.setImageResource(bookChosen.getbookImage());
+//        ImageView imageView = (ImageView)
+//                findViewById(R.id.bookImage);
+//        imageView.setImageResource(bookChosen.getbookImage());
 
         Bundle argsPicture = new Bundle();
         argsPicture.putInt("book_image",bookChosen.getbookImage());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             pictureFragment.setArguments(argsPicture);
         }
+//
+//        Bundle argsDetail = new Bundle();
+//        argsDetail.putInt(BookList.MESSAGE,bookChosen.getbookImage());
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+//            detailFragment.setArguments(argsDetail);
+//        }
 
-        Bundle argsDetail = new Bundle();
-        argsDetail.putInt(BookList.MESSAGE,bookChosen.getbookImage());
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            detailFragment.setArguments(argsDetail);
-        }
+//        TextView bookTitle = (TextView)
+//                findViewById(R.id.bookTitle);
+//        bookTitle.setText("Title: " + bookChosen.getbookTitle());
+//
+//        TextView bookAuthor = (TextView)
+//                findViewById(R.id.bookAuthor);
+//        bookAuthor.setText("Author: " +bookChosen.getbookAuthor());
+//
+//        TextView bookYear = (TextView)
+//                findViewById(R.id.bookYear);
+//        bookYear.setText("Year: " +bookChosen.getbookYear());
+    }
 
-        TextView bookTitle = (TextView)
-                findViewById(R.id.bookTitle);
-        bookTitle.setText("Title: " + bookChosen.getbookTitle());
+    @Override
+    public void onDateTimeItemSelected(String info) {
 
-        TextView bookAuthor = (TextView)
-                findViewById(R.id.bookAuthor);
-        bookAuthor.setText("Author: " +bookChosen.getbookAuthor());
-
-        TextView bookYear = (TextView)
-                findViewById(R.id.bookYear);
-        bookYear.setText("Year: " +bookChosen.getbookYear());
     }
 }
