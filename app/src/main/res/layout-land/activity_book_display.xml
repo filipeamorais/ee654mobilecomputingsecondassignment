@@ -4,22 +4,24 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:baselineAligned="false"
-    android:orientation="vertical">
+    android:orientation="horizontal">
     <FrameLayout
-        android:id="@+id/fragment_container"
+        android:id="@+id/fragment_container_land"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_weight="1"
-        android:paddingBottom="5dp">
+        android:paddingBottom="5dp"
+        tools:ignore="Suspicious0dp">
     </FrameLayout>
     <FrameLayout
-        android:id="@+id/fragment_container_2"
+        android:id="@+id/fragment_container_2_land"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
         android:orientation="vertical"
-        android:paddingBottom="5dp">
+        android:layout_weight="2"
+        android:paddingBottom="5dp"
+        tools:ignore="Suspicious0dp">
     </FrameLayout>
 <!--    <fragment-->
 <!--        android:id="@+id/imageFragment"-->

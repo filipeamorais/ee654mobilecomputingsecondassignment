@@ -3,8 +3,6 @@ package com.example.secondassigment;
 
 import android.app.Fragment;
 import android.os.Bundle;
-
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +33,7 @@ public class ImageFragment extends Fragment {
     }
 
     public void setImage (int bookImageNumber) {
-        ImageView imageView = (ImageView) getActivity().findViewById(R.id.bookImage); //This could be wrong because it is expending to find it from the activity
+        ImageView imageView = (ImageView) getView().findViewById(R.id.bookImage); //This could be wrong because it is expending to find it from the activity
         imageView.setImageResource(bookImageNumber);
     }
 

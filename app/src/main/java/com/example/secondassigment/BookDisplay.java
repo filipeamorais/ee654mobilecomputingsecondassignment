@@ -26,49 +26,30 @@ public class BookDisplay extends Activity {
 
         //instantiating the fragments
         ImageFragment imageFragment = new ImageFragment();
-//        getFragmentManager().executePendingTransactions();
-//        fragmentManager = getFragmentManager();//Get Fragment Manager
-//        DetailFragment detailFragment = new DetailFragment();
+        DetailFragment detailFragment = new DetailFragment();
 
-
-//        //instantiating the fragments and displaying them
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-//            ImageFragment imageFragment = (ImageFragment) getFragmentManager().findFragmentById(R.id.imageFragment);
-//        }
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-//            DetailFragment detailFragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
-//        }
-
-
-//        ImageView imageView = (ImageView)
-//                findViewById(R.id.bookImage);
-//        imageView.setImageResource(bookChosen.getbookImage());
-
-        Bundle argsPicture = new Bundle();
-        argsPicture.putInt(ImageFragment.IMAGE_NUMBER,bookChosen.getbookImage());
+        //saving the arguments and sending to the fragments
+        String[] bookDetails = {bookChosen.getbookTitle(), bookChosen.getbookAuthor(), bookChosen.getbookYear()};
+        Bundle argsFragment = new Bundle();
+        argsFragment.putInt(ImageFragment.IMAGE_NUMBER,bookChosen.getbookImage());
+        argsFragment.putStringArray(DetailFragment.DETAIL_INFO, bookDetails);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            imageFragment.setArguments(argsPicture);
+            imageFragment.setArguments(argsFragment);
+            detailFragment.setArguments(argsFragment);
         }
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, imageFragment).addToBackStack(null).commit();
-//
-//        Bundle argsDetail = new Bundle();
-//        argsDetail.putInt(BookList.MESSAGE,bookChosen.getbookImage());
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-//            detailFragment.setArguments(argsDetail);
-//        }
 
-//        TextView bookTitle = (TextView)
-//                findViewById(R.id.bookTitle);
-//        bookTitle.setText("Title: " + bookChosen.getbookTitle());
-//
-//        TextView bookAuthor = (TextView)
-//                findViewById(R.id.bookAuthor);
-//        bookAuthor.setText("Author: " +bookChosen.getbookAuthor());
-//
-//        TextView bookYear = (TextView)
-//                findViewById(R.id.bookYear);
-//        bookYear.setText("Year: " +bookChosen.getbookYear());
+        //running the transaction of the fragments
+        if (getResources().getBoolean(R.bool.twoPaneMode)) {
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container_land, imageFragment).addToBackStack(null).commit();
+            FragmentTransaction transaction_2 = getFragmentManager().beginTransaction();
+            transaction_2.replace(R.id.fragment_container_2_land, detailFragment).addToBackStack(null).commit();
+        } else {
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, imageFragment).addToBackStack(null).commit();
+            FragmentTransaction transaction_2 = getFragmentManager().beginTransaction();
+            transaction_2.replace(R.id.fragment_container_2, detailFragment).addToBackStack(null).commit();
+        }
     }
 
 }
