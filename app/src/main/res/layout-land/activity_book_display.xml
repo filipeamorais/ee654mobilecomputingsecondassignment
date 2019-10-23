@@ -16,8 +16,8 @@
 <!--        android:textColor="#483D8B" />-->
     <FrameLayout
         android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_weight="1"
         android:paddingBottom="5dp"
@@ -25,8 +25,8 @@
     </FrameLayout>
     <FrameLayout
         android:id="@+id/fragment_container_2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_weight="2"
         android:paddingBottom="5dp"
@@ -81,16 +81,17 @@
 <!--        tools:layout="@layout/detail_fragment">-->
 <!--    </fragment>-->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center|bottom"
-        android:orientation="vertical" >
+        android:orientation="horizontal"
+        tools:ignore="Suspicious0dp">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="previousActivity"
-            android:layout_gravity="center_horizontal|center"
+            android:layout_gravity="center_vertical|center"
             android:text="Previous" />
     </LinearLayout>
 </LinearLayout>
