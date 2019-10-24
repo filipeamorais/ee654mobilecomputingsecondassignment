@@ -67,6 +67,6 @@ public class BookList extends AppCompatActivity {
     }
 
     public void previousActivity (View view){
-        startActivity(new Intent(BookList.this, MainActivity.class));
+        finish();
     }
 }

@@ -40,10 +40,8 @@ public class BookDisplay extends Activity {
             detailFragment.setArguments(argsFragment);
         }
 
-        //running the transaction of the fragments
+        //running the transaction of the fragments and checking about the landscape mode
         if (getResources().getBoolean(R.bool.twoPaneMode)) {
-//            TextView textView = (TextView) findViewById(R.id.bookTitle);
-//            textView.setText("test");
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
             transaction.replace(R.id.fragment_container, imageFragment).addToBackStack(null).commit();
             FragmentTransaction transaction_2 = getFragmentManager().beginTransaction();
@@ -64,7 +62,6 @@ public class BookDisplay extends Activity {
                 getFragmentManager().beginTransaction().remove(fragmentById_2).commit();
             }
             finish();
-        //restore(new Intent(BookDisplay.this, MainActivity.class));
     }
 
 }

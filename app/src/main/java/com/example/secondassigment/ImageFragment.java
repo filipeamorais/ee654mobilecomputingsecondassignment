@@ -33,7 +33,7 @@ public class ImageFragment extends Fragment {
     }
 
     public void setImage (int bookImageNumber) {
-        ImageView imageView = (ImageView) getView().findViewById(R.id.bookImage); //This could be wrong because it is expending to find it from the activity
+        ImageView imageView = (ImageView) getView().findViewById(R.id.bookImage);
         imageView.setImageResource(bookImageNumber);
     }
 

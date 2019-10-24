@@ -5,15 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:baselineAligned="false"
     android:orientation="horizontal">
-<!--    <TextView-->
-<!--        android:id="@+id/bookTitle"-->
-<!--        android:layout_width="fill_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:padding="10dp"-->
-<!--        android:text="Title"-->
-<!--        android:textSize="20dp"-->
-<!--        android:textColor="#483D8B" />-->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="0dp"
@@ -32,54 +23,6 @@
         android:paddingBottom="5dp"
         tools:ignore="Suspicious0dp">
     </FrameLayout>
-<!--    <fragment-->
-<!--        android:id="@+id/imageFragment"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_weight="1"-->
-<!--        android:layout_height="match_parent"-->
-<!--        class="com.example.secondassigment.ImageFragment"-->
-<!--        tools:layout="@layout/fragment_image">-->
-<!--    </fragment>-->
-<!--    <ImageView-->
-<!--        android:id="@+id/bookImage"-->
-<!--        android:layout_width="fill_parent"-->
-<!--        android:layout_height="200dp"-->
-<!--        android:padding="5dp" />-->
-<!--    <TextView-->
-<!--        android:id="@+id/bookTitle"-->
-<!--        android:layout_width="fill_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:padding="10dp"-->
-<!--        android:text="Title"-->
-<!--        android:textSize="20dp"-->
-<!--        android:textColor="#483D8B" />-->
-<!--    <TextView-->
-<!--        android:id="@+id/bookAuthor"-->
-<!--        android:layout_width="fill_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:padding="10dp"-->
-<!--        android:text="Author"-->
-<!--        android:textSize="20dp"-->
-<!--        android:textColor="#483D8B" />-->
-<!--    <TextView-->
-<!--        android:id="@+id/bookYear"-->
-<!--        android:layout_width="fill_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:padding="10dp"-->
-<!--        android:text="Year"-->
-<!--        android:textSize="20dp"-->
-<!--        android:textColor="#483D8B" />-->
-<!--    <fragment-->
-<!--        android:id="@+id/detailFragment"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_weight="2"-->
-<!--        android:layout_height="match_parent"-->
-<!--        class="com.example.secondassigment.DetailFragment"-->
-<!--        tools:layout="@layout/detail_fragment">-->
-<!--    </fragment>-->
     <LinearLayout
         android:layout_width="0dip"
         android:layout_height="match_parent"
