@@ -63,7 +63,8 @@ public class BookDisplay extends Activity {
                 getFragmentManager().beginTransaction().remove(fragmentById).commit();
                 getFragmentManager().beginTransaction().remove(fragmentById_2).commit();
             }
-        startActivity(new Intent(BookDisplay.this, MainActivity.class));
+            finish();
+        //restore(new Intent(BookDisplay.this, MainActivity.class));
     }
 
 }
